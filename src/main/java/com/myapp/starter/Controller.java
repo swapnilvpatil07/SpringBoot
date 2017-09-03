@@ -3,6 +3,7 @@ package com.myapp.starter;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,14 +17,9 @@ public class Controller {
 		return new ResponseEntity<String>(name, HttpStatus.OK);
 	}
 	
-	/*@RequestMapping(value = "/license", method = RequestMethod.POST)
-	public ResponseEntity<?> getLicenseKey(@RequestBody LicsenseKey key) {
-		String licKey = key.getLicenseKey();
-		if (licKey.isEmpty() || licKey == null) {
-			return new ResponseEntity<String>("Invalid Key", HttpStatus.NOT_FOUND);
-		}
-		System.out.println(licKey);
-		String status = "Valid Key";
-		return new ResponseEntity<String>(status, HttpStatus.OK);
-	}*/
+	@RequestMapping(value = "/webhook", method = RequestMethod.POST)
+	public ResponseEntity<?> getLicenseKey(@RequestBody String body) {
+		System.out.println(body);
+		return new ResponseEntity<String>(body, HttpStatus.OK);
+	}
 }
