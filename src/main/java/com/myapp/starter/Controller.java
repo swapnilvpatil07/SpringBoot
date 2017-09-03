@@ -16,10 +16,10 @@ public class Controller {
 
 		return new ResponseEntity<String>(name, HttpStatus.OK);
 	}
-	
+
 	@RequestMapping(value = "/webhook", method = RequestMethod.POST)
 	public ResponseEntity<?> getLicenseKey(@RequestBody String body) {
-		System.out.println(body);
+		System.out.println("Body: " + body);
 		return new ResponseEntity<String>(body, HttpStatus.OK);
 	}
 }
