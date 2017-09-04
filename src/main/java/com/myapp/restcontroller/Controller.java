@@ -26,14 +26,13 @@ public class Controller {
 
 	@RequestMapping(value = "/webhook", method = RequestMethod.POST)
 	public ResponseEntity<?> getStockInfo(@RequestBody String body) {
-		System.out.println("Body: " + body);
 		JSONObject jsonObject = util.getJsonObj(body);
 		if (jsonObject != null) {
 			System.out.println("True");
 		}else {
 			System.out.println("Null object");
 		}
-		
-		return new ResponseEntity<String>(body, HttpStatus.OK);
+		System.out.println("Body: " + jsonObject);
+		return new ResponseEntity<JSONObject>(jsonObject, HttpStatus.OK);
 	}
 }
