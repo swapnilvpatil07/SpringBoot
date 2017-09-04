@@ -3,12 +3,12 @@
  */
 package com.myapp.utility;
 
-import org.json.simple.JSONObject;
+import org.json.JSONObject;
 
 /**
  * @author SwApNiL
  *
  */
 public interface CommonUtils {
-	public JSONObject getJsonObj(String jsonStr);
+	public JSONObject parseStringToJson(String jsonString);
 }
