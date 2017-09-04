@@ -1,7 +1,6 @@
 package com.myapp.restcontroller;
 
 import org.json.simple.JSONObject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,13 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.myapp.utility.CommonUtils;
 import com.myapp.utility.Util;
 
 @RestController
 public class Controller {
 	
-	@Autowired
-	Util util;
+	
+	CommonUtils util = new Util();
 
 	@RequestMapping(value = "/webhook/{test}", method = RequestMethod.GET)
 	public ResponseEntity<?> testCall(@PathVariable("test") String test) {
