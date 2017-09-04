@@ -22,7 +22,7 @@ public class JsonUtil implements CommonUtils {
 		return json;
 	}
 
-	public static Map<String, Object> jsonToMap(JSONObject json) throws JSONException {
+/*	public static Map<String, Object> jsonToMap(JSONObject json) throws JSONException {
 		Map<String, Object> retMap = new HashMap<String, Object>();
 
 		if (json != JSONObject.NULL) {
@@ -65,7 +65,7 @@ public class JsonUtil implements CommonUtils {
 			list.add(value);
 		}
 		return list;
-	}
+	}*/
 	
 	public static JSONObject getElement(JSONObject obj, String keyToFind, String oldValue, String newValue) throws Exception {
 	    // We need to know keys of Jsonobject

@@ -43,6 +43,6 @@ public class Controller {
 			System.out.println("Null object");
 		}
 		System.out.println("element: " + element);
-		return new ResponseEntity<JSONObject>(jsonObject, HttpStatus.OK);
+		return new ResponseEntity<String>(element.toString(), HttpStatus.OK);
 	}
 }
